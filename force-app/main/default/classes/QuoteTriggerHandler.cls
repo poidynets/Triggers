@@ -9,7 +9,7 @@ return;
             if (
 !QuoteTriggerHandlerHelper.isSyncedQuoteEqualsNull(newQuote) 
 &&!QuoteTriggerHandlerHelper.isUpdatedQuoteSyncedWithOpportunity(newQuote)
-//&&QuoteTriggerHandlerHelper.isSyncedQuoteInAccepted(newQuote)
+&&QuoteTriggerHandlerHelper.isSyncedQuoteInAccepted(newQuote)
 ){
 newQuote.adderror('Error, Quote went to "Accepted" status where we have additonal checks');
                             }
