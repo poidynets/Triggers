@@ -1,6 +1,7 @@
 public with sharing class QuoteTriggerHandlerHelper {
     public static Boolean isSyncedQuoteEqualsNull (Quote newQuote){
-       
+        System.Debug(newQuote.id);
+
         Opportunity SyncedQuoteValue = [SELECT SyncedQuoteId 
 FROM Opportunity 
 WHERE id IN (SELECT OpportunityId FROM Quote WHERE id=: newQuote.id)];
@@ -20,7 +21,6 @@ if (newQuote.id==SyncedQuoteComparison.SyncedQuoteId){
 return false;
        }
     public static Boolean isSyncedQuoteInAccepted (Quote newQuote){
-
         Opportunity SyncedQuoteIds = [SELECT SyncedQuoteId 
 FROM Opportunity 
 WHERE id IN (SELECT OpportunityId FROM Quote WHERE id=: newQuote.id)];
